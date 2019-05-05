@@ -1,0 +1,10 @@
+Package: Kung
+Type: Package
+Title: deSolve extension for creating a simple Shiny app
+Version: 0.1.0
+Author: Sompob Saralamba
+Maintainer: Sompob Saralamba <saralamba@gmail.com>
+Description: Shiny app for a compartmental model
+License: GNU 2
+Encoding: UTF-8
+LazyData: true
