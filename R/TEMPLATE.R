@@ -25,11 +25,7 @@ fluidPage(
 #   ),
 
   # title
-<<<<<<< HEAD
   tags$h2("Everything should be made as simple as possible, but no simpler"),
-=======
-  tags$h2("Mahidol Oxford Tropical Medicine Research Unit"),
->>>>>>> 9b6dc5c0b3be2c8af8fa0110dd3cffb9849c68a8
   hr(),
 
   fluidRow(
