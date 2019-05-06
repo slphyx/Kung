@@ -85,3 +85,4 @@ To create the Shiny app, just type
 runSystem('yournewfile').
 ```
 
+![](http://www.sakngoi.com/wp-content/uploads/kung_pic.png)
