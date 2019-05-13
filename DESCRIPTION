@@ -1,7 +1,7 @@
 Package: Kung
 Type: Package
-Title: deSolve extension for creating a simple Shiny app
-Version: 0.1.0
+Title: deSolve extension for creating a simple Shiny app from an ode system
+Version: 0.1.1
 Author: Sompob Saralamba
 Maintainer: Sompob Saralamba <saralamba@gmail.com>
 Description: Shiny app for a compartmental model

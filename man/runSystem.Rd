@@ -8,5 +8,5 @@ runSystem()
 Create a Shiny app from the deSolve ode system file
 }
 \examples{
-
+runSystem('odesystem.R')
 }
