@@ -37,7 +37,7 @@ legend(40, 0.7, c("Susceptibles", "Infecteds", "Recovereds"), pch = 1, col = 2:4
 
 ```
 
-from the code above, you can use Kung package to create a simple Shiny app easily to see what happen to the shape of the graphs if you change the value of your model parameters, i.e., beta and gamma by adding these keywords into your code and save it as a new file: 
+from the code above, you can use Kung package to create a simple Shiny app easily to see what happen to the shape of the graphs when you change the value of your model parameters, i.e., beta and gamma by adding these keywords into your code and save it as a new file: 
 !Start, !Parameters, !ODECMD, !PostProcess, !Plots, !Controls, !End. See the example below.
 
 ```
