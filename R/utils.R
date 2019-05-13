@@ -1,16 +1,16 @@
 # read from input string
 
-MAEMOD_Keys<-c("!Start", "!ODECMD", "!Parameters", "!PostProcess", "!Controls", "!Plots", "!End")
+MAEMOD_Keys <-c("!Start", "!ODECMD", "!Parameters", "!PostProcess", "!Controls", "!Plots", "!End")
 
 # number of keys
 No_Keys <- length(MAEMOD_Keys)
 
 ##  read the input from a text file
-ReadInputString<-function(filename){
+ReadInputString <-function(filename){
   readChar(filename,file.size(filename))
 }
 
-KeyLength<-function(key){
+KeyLength <-function(key){
   if(key %in% MAEMOD_Keys){
     return(nchar(key))
   }
@@ -110,7 +110,7 @@ WriteTxt <- function(txt="", filename) {
 
 ### taking last n characters of a string x
 substrRight <- function(x, n){
-  substr(x, nchar(x)-n+1, nchar(x))
+  substr(x, nchar(x) -n +1, nchar(x))
 }
 
 
@@ -132,7 +132,7 @@ RemovePar <- function(par,txt){
 ## remove '\n'
 RemoveN <- function(txt){
   w <- unlist(stringr::str_split(txt,'\n'))
-  paste(w[w!=""],collapse = '\n')
+  paste(w[w !=""],collapse = '\n')
 }
 
 
@@ -141,7 +141,7 @@ RemoveN <- function(txt){
 RemoveLastComma <- function(txt){
   w <- txt %>% RemoveN %>% stringr::str_split(pattern = '\n') %>% unlist
   len <- length(w)
-  lastpar <- (w %>% tail(n=2))[1]
+  lastpar <- (w %>% tail(n      =2))[1]
 
   #check the last par has comma at the end
   if(substrRight(lastpar,1)==","){
@@ -159,7 +159,7 @@ AddParVar <- function(txt, parvar){
   w <- RemoveN(txt) %>% stringr::str_split(pattern = '\n') %>% unlist
   len <- length(w)
 
-  append(w, values = paste(',',parvar,'\n'), after = len-1) %>% paste(collapse = '\n')
+  append(w, values = paste(',',parvar,'\n'), after = len - 1) %>% paste(collapse = '\n')
 
 }
 
@@ -171,14 +171,14 @@ GetParFromControls <- function(txt){
 
   #break txt as a vector of strings and find the postions of 'sliderInput'
   vec <- unlist(strsplit(w,','))
-  pos <- vec %>% gregexpr(pattern='sliderInput') %>% unlist
+  pos <- vec %>% gregexpr(pattern = 'sliderInput') %>% unlist
 
   #remove \"
-  tmp <- vec[pos > -1] %>% gsub(pattern = 'sliderInput', replacement="") %>% gsub(pattern = '\"', replacement="")
+  tmp <- vec[pos > -1] %>% gsub(pattern = 'sliderInput', replacement="") %>% gsub(pattern = '\"', replacement ="")
   #remove '\n'
-  tmp <- tmp %>% gsub(pattern = '\n',replacement="")
+  tmp <- tmp %>% gsub(pattern = '\n',replacement ="")
   #remove '('
-  tmp <- tmp %>% gsub(pattern = "(", replacement="",fixed=T)
+  tmp <- tmp %>% gsub(pattern = "(", replacement ="",fixed=T)
 
   tmp
 }
@@ -196,18 +196,23 @@ GenServerControls <- function(txt){
 }
 
 
+GetParametersLength <- function(partxt){
+  eval(parse(text = partxt))
+  length(parameters)
+}
+
+
 # check if there is only on parameter variable (for server.R) in parameter
 # haha if yes them remove the infront comma
-is.par.alone <- function(parstxt, parvar){
+is.par.alone <- function(parstxt){
 
-  #break it as a vector of string
-  tmp <- parstxt %>% strsplit(split=',')
-  len <- length(tmp)
+  # looking for = symbol
+  tmp <- gregexpr(pattern = '=',parstxt) %>% unlist
 
-  if(len < 3)
-    newpars <- parstxt %>% RemoveN %>% strsplit(split=',')%>%unlist%>% paste(collapse="")
-  else
-    newpars <- parstxt
+  newpars <- parstxt
+
+  if(tmp[1] < 1)
+    newpars <- parstxt %>% RemoveN %>% strsplit(split=',') %>% unlist %>% paste(collapse="")
 
   newpars
 }

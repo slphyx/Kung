@@ -12,13 +12,14 @@ GenShinyFiles <- function(txt,path){
 
   # list of control parameters
   ctrlpars <- ctrltxt %>% GetParFromControls
+  message(paste('Control Parameters :',ctrlpars))
 
   # new parameters after removing the control parameters
   newpars <- partxt
   for(i in 1:length(ctrlpars))
     newpars <- newpars %>% RemovePar(par=ctrlpars[i]) %>% RemoveLastComma
 
-  newpars <- newpars %>% RemoveLastComma %>% AddParVar(parvar='parms') %>% is.par.alone(parvar='parms')
+  newpars <- newpars %>% AddParVar(parvar='parms') %>% is.par.alone
 
 
   # add CONTROLS
