@@ -25,7 +25,7 @@ fluidPage(
 #   ),
 
   # title
-  tags$h2("Everything should be made as simple as possible, but no simpler"),
+  tags$h2("Everything should be made as simple as possible, but not simpler"),
   hr(),
 
   fluidRow(
