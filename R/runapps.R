@@ -41,3 +41,11 @@ saveSystem <- function(txt,path){
   message(paste0(svfile," has been written."))
 
 }
+
+#export shiny files
+SaveShinyFiles <- function(systemfile, path){
+
+  ReadInputString(systemfile) %>% GenShinyFiles(path=path)
+
+}
+

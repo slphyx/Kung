@@ -1,4 +1,4 @@
-ui <- '
+ui1 <- '
 
 # Sompob Saralamba <saralamba@gmail.com>
 
@@ -44,6 +44,33 @@ fluidPage(
   )
 
 )
+'
+
+ui <- '
+
+# Sompob Saralamba <saralamba@gmail.com>
+
+
+shinyUI(
+
+  pageWithSidebar(
+
+    # title
+    headerPanel("Everything should be made as simple as possible, but not simpler"),
+
+    # Sidebar with sliders
+    sidebarPanel(
+      CONTROLS
+    ),
+
+    # Show a plot of the generated distribution
+    mainPanel(
+      plotOutput("graphs")
+    )
+  )
+)
+
+
 '
 
 

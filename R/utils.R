@@ -120,12 +120,10 @@ RemovePar <- function(par,txt){
   len <- length(a)
   tmp <- vector('integer',length = len)
 
-  print(a)
   #paste(a[!(unlist(gregexpr(par,a)) > 1)], collapse = '\n')
   for(i in 1:len)
     tmp[i] <- gregexpr(par,a)[[i]][1]
 
-  print(tmp)
   paste(a[!(tmp > 1)], collapse = '\n')
 }
 
