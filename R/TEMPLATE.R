@@ -61,7 +61,12 @@ shinyUI(
     # Sidebar with sliders
     sidebarPanel(
       CONTROLS
+
+      #add the quote
+      , br(), hr(),
+      tags$p("QUOTE")
     ),
+
 
     # Show a plot of the generated distribution
     mainPanel(

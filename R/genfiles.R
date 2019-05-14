@@ -21,9 +21,14 @@ GenShinyFiles <- function(txt,path){
 
   newpars <- newpars %>% AddParVar(parvar='parms') %>% is.par.alone
 
+  #random quote
+  rq <- RQ()
 
   # add CONTROLS
   ui_txt <- ui %>% gsub(pattern = 'CONTROLS', replacement = ctrltxt)
+
+  # add quote
+  ui_txt <- ui_txt %>% gsub(pattern = 'QUOTE', replacement = rq)
 
   # add ode function
   sv_txt <- sv %>% gsub(pattern = 'ODEFUNC', replacement = starttxt)
@@ -56,5 +61,14 @@ GenShinyFiles <- function(txt,path){
   message(paste0(svfile," has been written."))
 
 }
+
+
+##random quote
+RQ <- function(){
+  raw <- paste0(system.file(package='Kung'),"/quotes/ada.dat") %>% readLines
+  rn<-sample.int(length(raw),1)
+  return(raw[rn])
+}
+
 
 
