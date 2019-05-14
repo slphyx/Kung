@@ -5,6 +5,11 @@ Version: 0.1.1
 Author: Sompob Saralamba
 Maintainer: Sompob Saralamba <saralamba@gmail.com>
 Description: Shiny app for a compartmental model
+Imports:
+  shiny,
+  magrittr,
+  deSolve,
+  stringr
 License: GNU 2
 Encoding: UTF-8
 LazyData: true
