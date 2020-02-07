@@ -1,5 +1,8 @@
-# Kung
+
+![](http://www.sakngoi.com/wp-content/uploads/kung.png)
+# Kung - พ่อฉันต้องได้กินกุ้ง แม่ฉันต้องได้กินกุ้ง ผัวหนูต้องได้กินกุ้ง
   turn your compartmental model to a Shiny app
+
 
 ## Installation
 
