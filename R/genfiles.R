@@ -12,7 +12,7 @@ GenShinyFiles <- function(txt,path){
 
   # list of control parameters
   ctrlpars <- ctrltxt %>% GetParFromControls
-  message(paste('Control Parameters :',ctrlpars))
+  message(paste('\nControl Parameters :',ctrlpars))
 
   # new parameters after removing the control parameters
   newpars <- partxt

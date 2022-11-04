@@ -20,7 +20,7 @@ runSystem <- function(systemfile, ...){
 
   #launch the app
   message("\nLaunching Shiny interface... ",
-          "for large models this  may take some time.")
+          "for a large model, this might take a while.")
 
   shiny::runApp(tmpdir,...)
 
