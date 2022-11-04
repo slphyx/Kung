@@ -89,7 +89,7 @@ library(Kung)
 runSystem('yournewfile').
 ```
 
-![](http://www.sakngoi.com/wp-content/uploads/sir_kung.png)
+![](pics/sir.png)
 
 ## Examples
 
