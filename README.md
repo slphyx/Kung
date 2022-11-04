@@ -89,3 +89,17 @@ runSystem('yournewfile').
 ```
 
 ![](http://www.sakngoi.com/wp-content/uploads/sir_kung.png)
+
+## Examples
+
+
+```
+runSystem( paste0(path.package("Kung"),"/examples/Lotka-Volterra_kung.R"))
+```
+![](pics/lotka-volterra.png)
+
+```
+runSystem( paste0(path.package("Kung"),"/examples/heart_kung.R"))
+```
+![](pics/heart.png)
+
