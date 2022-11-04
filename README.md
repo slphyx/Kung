@@ -85,6 +85,7 @@ sliderInput("gamma","gamma", min = 0,max = 1,step = 0.001,value = 0.14)
 
 To create the Shiny app, just type 
 ```
+library(Kung)
 runSystem('yournewfile').
 ```
 
