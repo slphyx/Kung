@@ -89,10 +89,13 @@ library(Kung)
 runSystem('yournewfile').
 ```
 
-![](pics/sir.png)
 
 ## Examples
 
+```
+runSystem( paste0(path.package("Kung"),"/examples/sir_kung.R"))
+```
+![](pics/sir_kung.png)
 
 ```
 runSystem( paste0(path.package("Kung"),"/examples/Lotka-Volterra_kung.R"))
